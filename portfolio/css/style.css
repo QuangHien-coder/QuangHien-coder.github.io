@@ -355,6 +355,50 @@ h2 {
   text-underline-offset: 4px;
 }
 
+/* HarvestHub: chữ bên trái, 2 màn hình điện thoại bên phải */
+.project-app { grid-template-columns: 1fr 1fr; }
+.project .project-meta { margin: -4px 0 14px; font-size: 15px; font-weight: 600; color: var(--violet); }
+.project p.project-note { margin: 16px 0 0; font-size: 14px; }
+
+.phones { margin: 0; }
+.phone-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding-bottom: 28px;
+}
+.phone-row img {
+  width: min(46%, 210px);
+  aspect-ratio: 487 / 1040;
+  object-fit: cover;
+  object-position: top;
+  border: 6px solid var(--ink);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+/* Màn thứ hai đặt thấp hơn một chút cho đỡ cứng */
+.phone-row img + img { transform: translateY(28px); }
+.phones figcaption {
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Các bài khác: danh sách gọn, mỗi bài một dòng kẻ */
+.others-title { font-size: 21px; font-weight: 700; margin: 48px 0 4px; }
+.others { margin: 0; padding: 0; list-style: none; }
+.other {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 32px;
+  align-items: start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.other h4 { margin: 0 0 6px; font-size: 18px; }
+.other p { margin: 0 0 12px; max-width: 64ch; color: var(--ink-soft); }
+.other .text-link { margin-top: 0; }
+
 /* Cửa sổ console hiện kết quả chương trình Java */
 .console { margin: 0; }
 .console pre {
@@ -466,13 +510,13 @@ h2 {
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; gap: 48px; padding-block: 56px; }
   .card { margin: 0 auto 0 4px; }
-  .project-main { grid-template-columns: 1fr; }
+  .project-main, .project-app { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 720px) {
   .about { grid-template-columns: 1fr; gap: 32px; }
-  .skill { grid-template-columns: 1fr; }
+  .skill, .other { grid-template-columns: 1fr; }
   .links { gap: 18px; }
 }
 
